@@ -24,8 +24,17 @@
  
 /* Base styles */
   --background: #121212;        /* soft black */
-  --text-color: #fafafa;        /* light grey - soft white */
-  }
+  --text-color: #fafafa;        /* soft off-white */
+
+/* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-xxl: 8rem;
+}
+
 
 /* RESET LAYER - clear browser styles */
 @layer reset {
@@ -55,7 +64,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     column-gap: 0.75rem; 
-    width: 100%; /* ensure it stays within bounds */
+    width: 100%; 
     grid-template-areas: 
         "logo          header       header"
         "hero          hero         hero"
@@ -130,8 +139,7 @@
   justify-content: space-between;
   gap: 2rem;
   min-height: 500px;
-  max-height: 600px;
-  padding: 0;         
+  max-height: 600px;     
   background-color: #242424;
 }
 
@@ -143,10 +151,7 @@
   flex-direction: column; 
   justify-content: center;
   align-items: center;
-  padding-block: 5rem;
-  margin-top: 5rem;
-  margin-bottom: 3rem;
-
+  padding-block: var(--space-xxl);
   font-family: var(--font-family-accent);
   font-size: var(--font-size-xxl);
   font-weight: 700;
@@ -157,15 +162,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-color: #2F5655;  /* fallback bkg */
+  background-color: #263a39;  /* fallback bkg */
 }
 
 blockquote {
-  max-width: 65ch;      
-  margin: 2rem;  
-  padding-inline: 2rem; 
+  max-width: 30ch;      
+  padding-inline: 1rem; 
   line-height: 4rem;      
-  margin-top: 2rem;
 }
 
 blockquote::first-letter {
@@ -178,7 +181,7 @@ blockquote::first-letter {
   grid-area: video;
   display: grid;
   justify-items: center;
-  padding: 3rem;
+  padding: var(--space-xxl);
   background-color: #d5d5d5;
   margin-top: 1rem;
 }
@@ -193,7 +196,7 @@ blockquote::first-letter {
   grid-area: stream;
   display: grid;
   justify-items: center;
-  padding: 2rem;
+  padding: var(--space-xxl);
 }
 
 /* HOME PAGE - Cards Section */
@@ -216,7 +219,9 @@ blockquote::first-letter {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  padding: 3rem 5%;
+  padding: 8rem 1rem 3rem 1rem;
+  margin-bottom: var(--font-size-xxl);
+  /* padding: 3rem 5%; */
   background-image: url('../img/cards-home-brick.webp');
   background-size: cover;
   background-position: top;
@@ -234,7 +239,7 @@ blockquote::first-letter {
   align-items: stretch;
   background-image: url('../img/damask-bkg.webp');
   background-color: #121212;
-  padding: 4rem 10% 4rem 10%; 
+  padding: 3rem 10% 6rem 10%; 
 }
 
 /* PLOT PAGE - main section */
@@ -245,7 +250,7 @@ blockquote::first-letter {
   flex-direction: column;
   justify-content: center;
   min-height: 400px;
-  padding: 3rem;
+  padding: 2rem;
  }
 
 /* PLOT PAGE - Cards section */
@@ -268,7 +273,7 @@ blockquote::first-letter {
 .cast-grid h2 {
   grid-column: 1 / -1;   /* to span all 3 columns */
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   margin-top: 1rem;
 }
 
@@ -294,7 +299,7 @@ blockquote::first-letter {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;          
   padding: 1rem 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
 }
 
 /* ABOUT PAGE - card section style */
@@ -541,11 +546,13 @@ blockquote::first-letter {
 }
 
 .hero-text {
-  padding: 3rem 1rem 2rem;
+  /* padding: 3rem 1rem 2rem; */
   max-width: 65ch;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: var(--space-lg) var(--space-md);
+  gap: var(--space-md);
 }
 
 .intro-text {
@@ -571,8 +578,7 @@ h1 {
   font-family: var(--font-family-accent);
   color: var(--color-accent-1);
   font-size: var(--font-size-xxl);
-  line-height: 3.25rem;
-  margin-bottom: 2rem;
+  line-height: 4rem;
 }
 
 /* Section Titles */
@@ -581,14 +587,14 @@ h2 {
   color: var(--color-primary);
   font-size: var(--font-size-xl);
   line-height: 3.25rem;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .h2-white {
   color: var(--color-secondary);
   margin-bottom: 1rem;
-  padding-top: 2.5rem;
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
